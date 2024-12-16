@@ -22,3 +22,25 @@ Resources:
   PublicSubnet2:
     Type: AWS::EC2::Subnet
     Properties: 
+      VpcId: !Ref VPC
+      CidrBlock: 10.3.2.0/24
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: Name
+          Value: Three-Tier-Public-Subnet-2
+  PrivateSubnet1:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: 10.3.3.0/24
+      Tags:
+        - Key: Name
+          Value: Three-Tier-Private-Subnet-1
+  PrivateSubnet2:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: 10.3.4.0/24
+      Tags:
+        - Key: Name
+          Value: Three-Tier-Private-Subnet-2
